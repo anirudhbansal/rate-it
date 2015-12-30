@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="10dp"
+    android:layout_marginRight="10dp"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+    <TextView android:text="@string/username" android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <EditText android:id="@+id/main_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="20"
+        android:layout_marginTop="10dp"/>
+    <TextView android:text="@string/password" android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"/>
+    <EditText android:id="@+id/main_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="20"
+        android:layout_marginTop="10dp"
+        android:password="true"/>
+    <Button android:text="@string/log" android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"/>
+    <Button android:id="@+id/main_reg"
+        android:text="@string/register" android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:onClick="onMainReg"/>
+    <TextView android:id="@+id/error_login" android:text="" android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"/>
+
+</LinearLayout>
