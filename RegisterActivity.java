@@ -15,6 +15,7 @@ public class RegisterActivity extends Activity {
     Button register;
     TextView register_message;
     String reg_error="Username and Password cannot be left blank";
+    String reg_unavail="Username is already taken";
     String reg_succ="Registration successful.Please go back to main page to login";
 
     @Override
@@ -39,8 +40,18 @@ public class RegisterActivity extends Activity {
         if (s1.length()==0 ||  s2.length()==0)
             register_message.setText(reg_error);
         else {
-            register_message.setText(reg_succ);
-            register.setClickable(false);
+
+            UserDatabaseHelper dbUser = new UserDatabaseHelper(RegisterActivity.this);
+            dbUser.open();
+            long result=dbUser.AddUser(s1,s2);
+            if (result != -1) {
+                if(result!=-2) {
+                    register_message.setText(reg_succ);
+                    register.setClickable(false);
+                }
+                else register_message.setText(reg_unavail);
+            }
+            dbUser.close();
         }
     }
 
