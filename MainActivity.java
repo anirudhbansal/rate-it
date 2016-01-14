@@ -35,6 +35,9 @@ public void onMainLog(View view){
             if(dbUser.Login(s1,s2))
             {
                 error.setText("");
+                Intent intent=new Intent(this,MainMenuActivity.class);
+                intent.putExtra(MainMenuActivity.USER,s1);
+                startActivity(intent);
             }else{
                error.setText(error_message);
             }
